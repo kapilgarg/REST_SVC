@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "SendJSONData";
+}
+
+<h2>SendJSONData</h2>
+@using(Html.BeginForm("SendJSONData", "Home", FormMethod.Post)) {
+    <input type="submit" value="Send JSON" /> 
+}
+
+<div>
+Return Value: </br>
+@ViewBag.Result
+</div>

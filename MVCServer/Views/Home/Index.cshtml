@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>@ViewBag.Message</h2>
+<div>
+
+@using(Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" })) {
+    <input type="file" name="file" size="40" /> 
+    <input type="submit" value="Upload" />
+    }
+<br />
+@using(Html.BeginForm("SendJSONData", "Home", FormMethod.Post)) {
+    <input type="submit" value="Send JSON" /> 
+}
+@using(Html.BeginForm("SendXMLData", "Home", FormMethod.Post)) {
+    <input type="submit" value="Send XML" /> 
+}
+<hr />
+
+<div>
+<strong>Result</strong> <br />
+@Html.Raw(ViewBag.Result)
+</div>
